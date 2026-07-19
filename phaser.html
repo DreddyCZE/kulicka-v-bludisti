@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#63c8ff">
+  <title>Kouzelná zahrada – nová verze</title>
+  <link rel="stylesheet" href="css/phaser.css">
+</head>
+<body>
+  <main id="game-shell">
+    <header class="hud">
+      <div class="profile">
+        <div class="portrait">🦄</div>
+        <div><strong>Lili</strong><small>Květinová louka</small></div>
+      </div>
+      <div class="counter"><span>⭐</span><b id="stars">0 / 5</b></div>
+      <div class="counter"><span>🔑</span><b id="keys">0 / 1</b></div>
+      <button id="restart" aria-label="Restartovat úroveň">↻</button>
+    </header>
+
+    <section id="game"></section>
+
+    <div id="message" role="status"></div>
+    <div id="sensor-status">Nakláněj telefon nebo použij joystick</div>
+
+    <div id="joystick" aria-label="Dotykový joystick">
+      <div id="joystick-knob"></div>
+    </div>
+
+    <div id="intro" class="modal">
+      <div class="card">
+        <div class="big-unicorn">🦄</div>
+        <h1>Kouzelná zahrada</h1>
+        <p>Posbírej všechny hvězdičky, najdi zlatý klíček a otevři duhovou bránu.</p>
+        <button id="play">Hrát</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+  <script type="module" src="js/phaser-game.js"></script>
+</body>
+</html>
