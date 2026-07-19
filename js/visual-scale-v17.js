@@ -7,9 +7,10 @@
     gate: 1.75
   };
 
-  const originalSetDisplaySize = Phaser.GameObjects.Components.Size.prototype.setDisplaySize;
+  const imagePrototype = Phaser.GameObjects.Image.prototype;
+  const originalSetDisplaySize = imagePrototype.setDisplaySize;
 
-  Phaser.GameObjects.Components.Size.prototype.setDisplaySize = function (width, height) {
+  imagePrototype.setDisplaySize = function (width, height) {
     const key = this.texture?.key;
     const factor = factors[key] ?? 1;
     const result = originalSetDisplaySize.call(this, width * factor, height * factor);
