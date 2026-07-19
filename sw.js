@@ -1,4 +1,4 @@
-const CACHE='kouzelna-zahrada-v4';
+const CACHE='kouzelna-zahrada-v5';
 const ASSETS=['./','./index.html','./manifest.json','./css/game.css','./js/main.js','./js/data.js','./js/storage.js','./js/art.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
