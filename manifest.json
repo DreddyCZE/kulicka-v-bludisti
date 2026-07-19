@@ -1,11 +1,11 @@
 {
-  "name": "Kulička v bludišti",
-  "short_name": "Bludiště",
+  "name": "Kouzelná zahrada",
+  "short_name": "Zahrada",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1118",
-  "theme_color": "#101820",
+  "background_color": "#dfffd9",
+  "theme_color": "#ff87c8",
   "orientation": "portrait-primary",
-  "description": "Mobilní hra ovládaná náklonem telefonu nebo tabletu."
+  "description": "Veselá dětská hra s jednorožcem, hvězdičkami a ovládáním náklonem."
 }
