@@ -1,15 +1,15 @@
-const CACHE='kouzelna-zahrada-v18';
+const CACHE='kouzelna-zahrada-v19';
 const ASSETS=[
   './','./index.html','./phaser.html','./manifest.json',
-  './css/game.css','./css/phaser.css?v=18',
+  './css/game.css','./css/phaser.css?v=19',
   './js/main.js','./js/data.js','./js/storage.js','./js/art.js',
-  './js/control-mode-v15.js?v=18','./js/external-assets-v15.js?v=18',
-  './js/visual-scale-v17.js?v=18','./js/phaser-game-v10.js?v=18',
-  './assets/generated/lili.png.b64?v=18',
-  './assets/generated/star-v16.png.b64?v=18',
-  './assets/generated/key-v16.png.b64?v=18',
-  './assets/generated/pond-v16.png.b64?v=18',
-  './assets/generated/gate-v16.png.b64?v=18'
+  './js/control-mode-v15.js?v=19','./js/external-assets-v15.js?v=19',
+  './js/phaser-game-v10.js?v=19',
+  './assets/generated/lili.png.b64?v=19',
+  './assets/generated/star-v16.png.b64?v=19',
+  './assets/generated/key-v16.png.b64?v=19',
+  './assets/generated/pond-v16.png.b64?v=19',
+  './assets/generated/gate-v16.png.b64?v=19'
 ];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
