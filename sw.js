@@ -1,5 +1,5 @@
-const CACHE='kouzelna-zahrada-v5';
-const ASSETS=['./','./index.html','./manifest.json','./css/game.css','./js/main.js','./js/data.js','./js/storage.js','./js/art.js'];
+const CACHE='kouzelna-zahrada-v6';
+const ASSETS=['./','./index.html','./phaser.html','./manifest.json','./css/game.css','./css/phaser.css','./js/main.js','./js/data.js','./js/storage.js','./js/art.js','./js/phaser-game.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).then(r=>{let copy=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',copy));return r}).catch(()=>caches.match('./index.html')));return}e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request)))})
+self.addEventListener('fetch',e=>{if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).then(r=>{let copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))));return}e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request)))})
