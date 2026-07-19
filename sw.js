@@ -1,4 +1,4 @@
-const CACHE = "kouzelna-zahrada-v2";
+const CACHE = "kouzelna-zahrada-v3";
 const ASSETS = ["./", "./index.html", "./manifest.json"];
 
 self.addEventListener("install", event => {
