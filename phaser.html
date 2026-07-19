@@ -4,14 +4,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <meta name="theme-color" content="#63c8ff">
-  <meta name="build" content="stable-garden-v13">
+  <meta name="build" content="stable-garden-v14">
   <title>Kouzelná zahrada – stabilní verze</title>
-  <link rel="stylesheet" href="css/phaser.css?v=13">
+  <link rel="stylesheet" href="css/phaser.css?v=14">
 </head>
 <body>
   <main id="game-shell">
     <header class="hud">
-      <div class="profile"><div class="portrait">🦄</div><div><strong>Lili</strong><small>Květinová louka</small></div></div>
+      <div class="profile">
+        <div class="portrait" aria-label="Lili">
+          <svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true">
+            <defs>
+              <linearGradient id="mane" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#ff8ccc"/><stop offset="1" stop-color="#a946d7"/>
+              </linearGradient>
+              <linearGradient id="horn" x1="0" y1="0" x2="0" y2="1">
+                <stop stop-color="#fff49a"/><stop offset="1" stop-color="#ff9b27"/>
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="52" r="41" fill="#f8ebff"/>
+            <path d="M25 61c-7-20 7-39 27-41 21-2 38 13 38 32 0 22-19 37-42 35-12-1-19-10-23-26z" fill="#fff" stroke="#d9b9e5" stroke-width="3"/>
+            <path d="M58 22 66 4 73 25" fill="url(#horn)" stroke="#d67b18" stroke-width="2"/>
+            <path d="M30 36c6-16 27-24 43-13-9 4-14 11-15 22-8-8-17-11-28-9z" fill="url(#mane)"/>
+            <path d="M25 59c-11 4-13 17-3 25 2-9 8-14 17-16" fill="none" stroke="url(#mane)" stroke-width="10" stroke-linecap="round"/>
+            <ellipse cx="68" cy="47" rx="5" ry="7" fill="#4d2a68"/>
+            <circle cx="70" cy="44" r="1.8" fill="#fff"/>
+            <circle cx="79" cy="59" r="2.8" fill="#eb6fab"/>
+            <path d="M65 62c5 4 10 4 14 0" fill="none" stroke="#9d477d" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div><strong>Lili</strong><small>Květinová louka</small></div>
+      </div>
       <div class="counter"><span>⭐</span><b id="stars">0 / 5</b></div>
       <div class="counter"><span>🔑</span><b id="keys">0 / 1</b></div>
       <button id="restart" aria-label="Restartovat úroveň">↻</button>
@@ -20,10 +43,11 @@
     <div id="message" role="status"></div>
     <div id="sensor-status">Nakláněj telefon nebo použij joystick</div>
     <div id="joystick" aria-label="Dotykový joystick"><div id="joystick-knob"></div></div>
-    <div id="intro" class="modal"><div class="card"><div class="big-unicorn">🦄</div><h1>Kouzelná zahrada</h1><p>Opravená hratelná verze. Posbírej hvězdičky, najdi klíček a otevři duhovou bránu.</p><button id="play">Hrát</button><small class="version">Stabilní renderer v13</small></div></div>
+    <div id="intro" class="modal"><div class="card"><div class="big-unicorn">🦄</div><h1>Kouzelná zahrada</h1><p>Při použití joysticku se náklon automaticky vypne. Postupně nahrazujeme grafické assety.</p><button id="play">Hrát</button><small class="version">Ovládání + první asset v14</small></div></div>
   </main>
   <script>navigator.serviceWorker?.getRegistrations().then(rs=>rs.forEach(r=>r.update()));</script>
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
-  <script type="module" src="js/phaser-game-v10.js?v=13"></script>
+  <script src="js/control-mode-v14.js?v=14"></script>
+  <script type="module" src="js/phaser-game-v10.js?v=14"></script>
 </body>
 </html>
