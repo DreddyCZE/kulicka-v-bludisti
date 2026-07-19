@@ -1,5 +1,5 @@
-const CACHE='kouzelna-zahrada-v11';
-const ASSETS=['./','./index.html','./phaser.html','./manifest.json','./css/game.css','./css/phaser.css?v=11','./js/main.js','./js/data.js','./js/storage.js','./js/art.js','./js/phaser-game-v10.js?v=11','./js/asset-skin-v11.js?v=11','./assets/generated/star.webp.txt?v=11'];
+const CACHE='kouzelna-zahrada-v12';
+const ASSETS=['./','./index.html','./phaser.html','./manifest.json','./css/game.css','./css/phaser.css?v=12','./js/main.js','./js/data.js','./js/storage.js','./js/art.js','./js/phaser-game-v12.js?v=12'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{const request=event.request;if(request.method!=='GET')return;const url=new URL(request.url);if(url.origin===self.location.origin){event.respondWith(fetch(request).then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(request,copy));return response}).catch(()=>caches.match(request).then(response=>response||caches.match('./index.html'))));return}event.respondWith(caches.match(request).then(response=>response||fetch(request)))})
