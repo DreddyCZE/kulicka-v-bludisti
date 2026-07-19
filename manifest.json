@@ -1,0 +1,11 @@
+{
+  "name": "Kulička v bludišti",
+  "short_name": "Bludiště",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1118",
+  "theme_color": "#101820",
+  "orientation": "portrait-primary",
+  "description": "Mobilní hra ovládaná náklonem telefonu nebo tabletu."
+}
