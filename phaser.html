@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <meta name="theme-color" content="#63c8ff">
-  <meta name="build" content="external-assets-v16">
-  <title>Kouzelná zahrada – externí assety</title>
-  <link rel="stylesheet" href="css/phaser.css?v=16">
+  <meta name="build" content="external-assets-v17">
+  <title>Kouzelná zahrada – větší herní prvky</title>
+  <link rel="stylesheet" href="css/phaser.css?v=17">
 </head>
 <body>
   <main id="game-shell">
@@ -27,19 +27,20 @@
       <div class="card">
         <div class="big-unicorn">🦄</div>
         <h1>Kouzelná zahrada</h1>
-        <p>Externí PNG grafika je nyní použita pro Lili, hvězdy, klíček, jezírka a kouzelnou bránu.</p>
+        <p>Hvězdy, klíček, jezírka, brána i Lili jsou nyní větší a lépe viditelné.</p>
         <button id="play">Hrát</button>
-        <small class="version">Externí assety v16</small>
+        <small class="version">Větší herní prvky v17</small>
       </div>
     </div>
   </main>
   <script>navigator.serviceWorker?.getRegistrations().then(rs=>rs.forEach(r=>r.update()));</script>
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
-  <script src="js/control-mode-v15.js?v=16"></script>
-  <script src="js/external-assets-v15.js?v=16"></script>
+  <script src="js/control-mode-v15.js?v=17"></script>
+  <script src="js/external-assets-v15.js?v=17"></script>
+  <script src="js/visual-scale-v17.js?v=17"></script>
   <script type="module">
     await (window.GARDEN_ASSET_BOOT ?? Promise.resolve(false));
-    await import('./js/phaser-game-v10.js?v=16');
+    await import('./js/phaser-game-v10.js?v=17');
   </script>
 </body>
 </html>
